@@ -1,0 +1,5 @@
+[console_scripts]
+drive_control = drive.drive_control_node:main
+motor_controller = drive.motor_controller_node:main
+motor_health_monitor = drive.motor_health_monitor_node:main
+

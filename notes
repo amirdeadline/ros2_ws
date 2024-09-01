@@ -1,0 +1,48 @@
+arduino-cli compile --fqbn arduino:avr:uno your_sketch.ino
+arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno your_sketch.ino
+
+##check Consol ports available "sudo dmesg | grep tty"
+
+#arduino 1 Uno motor Drivers rear 
+arduino-cli compile --fqbn arduino:avr:uno /home/delta/ros2_ws/test0/arduino/1/1.ino
+arduino-cli upload -p /dev/serial1 --fqbn arduino:avr:uno /home/delta/ros2_ws/test0/arduino/1/1.ino
+
+
+
+#arduino 2 Uno rear extra , L298N
+arduino-cli compile --fqbn arduino:avr:uno /home/delta/ros2_ws/test0/arduino/2/2.ino
+arduino-cli upload -p /dev/ttyS1 --fqbn arduino:avr:uno /home/delta/ros2_ws/test0/arduino/2/2.ino
+
+
+
+#arduino 3 Mega front
+arduino-cli compile --fqbn arduino:avr:uno /home/delta/ros2_ws/test0/arduino/3/3.ino
+arduino-cli upload -p /dev/ttyUSB0 --fqbn arduino:avr:uno /home/delta/ros2_ws/test0/arduino/3/3.ino
+
+
+
+#arduino clean
+arduino-cli compile --fqbn arduino:avr:mega /home/delta/ros2_ws/test0/arduino/clean/clean.ino
+arduino-cli upload -p /dev/serial1 --fqbn arduino:avr:mega /home/delta/ros2_ws/test0/arduino/clean/clean.ino
+
+
+arduino-cli upload -p /dev/ttyAMA0 --fqbn arduino:avr:mega /home/delta/ros2_ws/test0/arduino/clean/clean.ino
+
+arduino-cli upload -p /dev/ttyAMA1 --fqbn arduino:avr:mega /home/delta/ros2_ws/test0/arduino/clean/clean.ino
+
+
+arduino-cli compile --fqbn arduino:avr:mega /home/delta/ros2_ws/test0/arduino/test/test.ino
+arduino-cli upload -p /dev/serial1 --fqbn arduino:avr:mega test0/arduino/test/test.ino
+
+arduino-cli upload -p /dev/ttyAMA0 --fqbn arduino:avr:mega /home/delta/ros2_ws/test0/arduino/test/test.ino
+
+
+
+##minicom serial access 
+minicom -b 9600 -o -D /dev/serial1
+
+
+
+ros2 topic pub /motor_commands geometry_msgs/msg/Twist "{linear: {x: 0.35, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}"
+
+ros2 topic pub /motor_commands geometry_msgs/msg/Twist "{linear: {x: 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}"
