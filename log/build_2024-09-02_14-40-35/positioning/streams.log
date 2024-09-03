@@ -1,0 +1,30 @@
+[3.033s] Invoking command in '/home/delta/ros2_ws/src/positioning': PYTHONPATH=/home/delta/ros2_ws/build/positioning/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/positioning build --build-base /home/delta/ros2_ws/build/positioning/build install --record /home/delta/ros2_ws/build/positioning/install.log --single-version-externally-managed install_data
+[4.303s] running egg_info
+[4.306s] writing ../../build/positioning/positioning.egg-info/PKG-INFO
+[4.307s] writing dependency_links to ../../build/positioning/positioning.egg-info/dependency_links.txt
+[4.309s] writing entry points to ../../build/positioning/positioning.egg-info/entry_points.txt
+[4.310s] writing requirements to ../../build/positioning/positioning.egg-info/requires.txt
+[4.310s] writing top-level names to ../../build/positioning/positioning.egg-info/top_level.txt
+[4.320s] reading manifest file '../../build/positioning/positioning.egg-info/SOURCES.txt'
+[4.325s] writing manifest file '../../build/positioning/positioning.egg-info/SOURCES.txt'
+[4.325s] running build
+[4.326s] running build_py
+[4.326s] copying positioning/imu_node.py -> /home/delta/ros2_ws/build/positioning/build/lib/positioning
+[4.328s] running install
+[4.329s] running install_lib
+[4.333s] copying /home/delta/ros2_ws/build/positioning/build/lib/positioning/imu_node.py -> /home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages/positioning
+[4.336s] byte-compiling /home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages/positioning/imu_node.py to imu_node.cpython-310.pyc
+[4.341s] running install_data
+[4.342s] running install_egg_info
+[4.351s] removing '/home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages/positioning-0.0.0-py3.10.egg-info' (and everything under it)
+[4.353s] Copying ../../build/positioning/positioning.egg-info to /home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages/positioning-0.0.0-py3.10.egg-info
+[4.359s] running install_scripts
+[4.431s] Installing gps_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+[4.432s] Installing gsm_position_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+[4.432s] Installing imu_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+[4.433s] Installing lidar_localization_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+[4.434s] Installing nav2_interface_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+[4.435s] Installing position_monitor_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+[4.435s] Installing sensor_fusion_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+[4.437s] writing list of installed files to '/home/delta/ros2_ws/build/positioning/install.log'
+[4.559s] Invoked command in '/home/delta/ros2_ws/src/positioning' returned '0': PYTHONPATH=/home/delta/ros2_ws/build/positioning/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/positioning build --build-base /home/delta/ros2_ws/build/positioning/build install --record /home/delta/ros2_ws/build/positioning/install.log --single-version-externally-managed install_data

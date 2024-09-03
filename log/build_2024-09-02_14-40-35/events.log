@@ -1,0 +1,81 @@
+[0.000000] (-) TimerEvent: {}
+[0.001762] (-) JobUnselected: {'identifier': 'drive'}
+[0.002393] (positioning) JobQueued: {'identifier': 'positioning', 'dependencies': OrderedDict()}
+[0.002958] (positioning) JobStarted: {'identifier': 'positioning'}
+[0.099005] (-) TimerEvent: {}
+[0.199703] (-) TimerEvent: {}
+[0.300624] (-) TimerEvent: {}
+[0.401739] (-) TimerEvent: {}
+[0.502815] (-) TimerEvent: {}
+[0.603598] (-) TimerEvent: {}
+[0.704320] (-) TimerEvent: {}
+[0.804995] (-) TimerEvent: {}
+[0.905694] (-) TimerEvent: {}
+[1.006395] (-) TimerEvent: {}
+[1.107081] (-) TimerEvent: {}
+[1.207864] (-) TimerEvent: {}
+[1.308656] (-) TimerEvent: {}
+[1.409734] (-) TimerEvent: {}
+[1.510505] (-) TimerEvent: {}
+[1.611220] (-) TimerEvent: {}
+[1.712023] (-) TimerEvent: {}
+[1.812766] (-) TimerEvent: {}
+[1.913484] (-) TimerEvent: {}
+[2.014130] (-) TimerEvent: {}
+[2.114783] (-) TimerEvent: {}
+[2.215431] (-) TimerEvent: {}
+[2.316149] (-) TimerEvent: {}
+[2.416916] (-) TimerEvent: {}
+[2.517589] (-) TimerEvent: {}
+[2.618236] (-) TimerEvent: {}
+[2.718978] (-) TimerEvent: {}
+[2.819858] (-) TimerEvent: {}
+[2.920843] (-) TimerEvent: {}
+[3.022242] (-) TimerEvent: {}
+[3.031231] (positioning) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/positioning', 'build', '--build-base', '/home/delta/ros2_ws/build/positioning/build', 'install', '--record', '/home/delta/ros2_ws/build/positioning/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/delta/ros2_ws/src/positioning', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'delta', 'SSH_CLIENT': '10.1.1.2 58975 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/delta/.vscode-server/cli/servers/Stable-b1c0a14de1414fcdaa400695b4db1c0799bc3124/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/delta/.vscode-server/cli/servers/Stable-b1c0a14de1414fcdaa400695b4db1c0799bc3124/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/delta', 'OLDPWD': '/home/delta/ros2_ws', 'TERM_PROGRAM_VERSION': '1.92.0', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-9be661a2-0f09-4e71-a24d-74b28f5dec12.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/delta/.vscode-server/cli/servers/Stable-b1c0a14de1414fcdaa400695b4db1c0799bc3124/server/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/delta/.vscode-server/cli/servers/Stable-b1c0a14de1414fcdaa400695b4db1c0799bc3124/server/node', 'SSL_CERT_FILE': '/usr/lib/ssl/certs/ca-certificates.crt', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'COLCON_PREFIX_PATH': '/home/delta/ros2_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'delta', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '2', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/delta/.vscode-server/cli/servers/Stable-b1c0a14de1414fcdaa400695b4db1c0799bc3124/server/bin/remote-cli:/home/delta/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/delta/ros2_ws/bin:/home/delta/ros2_ws/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'SSL_CERT_DIR': '/usr/lib/ssl/certs', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-86298ee3f4.sock', 'TERM_PROGRAM': 'vscode', 'ROS_DOMAIN_ID': '5', 'AMENT_PREFIX_PATH': '/home/delta/ros2_ws/install/positioning:/opt/ros/humble', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/delta/ros2_ws/build/positioning', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '10.1.1.2 58975 10.1.201.208 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/delta/ros2_ws/build/positioning/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages:/home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[3.122417] (-) TimerEvent: {}
+[3.223185] (-) TimerEvent: {}
+[3.324103] (-) TimerEvent: {}
+[3.424986] (-) TimerEvent: {}
+[3.525816] (-) TimerEvent: {}
+[3.626567] (-) TimerEvent: {}
+[3.727312] (-) TimerEvent: {}
+[3.827984] (-) TimerEvent: {}
+[3.928697] (-) TimerEvent: {}
+[4.029356] (-) TimerEvent: {}
+[4.130056] (-) TimerEvent: {}
+[4.230770] (-) TimerEvent: {}
+[4.305185] (positioning) StdoutLine: {'line': b'running egg_info\n'}
+[4.308287] (positioning) StdoutLine: {'line': b'writing ../../build/positioning/positioning.egg-info/PKG-INFO\n'}
+[4.309726] (positioning) StdoutLine: {'line': b'writing dependency_links to ../../build/positioning/positioning.egg-info/dependency_links.txt\n'}
+[4.311167] (positioning) StdoutLine: {'line': b'writing entry points to ../../build/positioning/positioning.egg-info/entry_points.txt\n'}
+[4.312221] (positioning) StdoutLine: {'line': b'writing requirements to ../../build/positioning/positioning.egg-info/requires.txt\n'}
+[4.313162] (positioning) StdoutLine: {'line': b'writing top-level names to ../../build/positioning/positioning.egg-info/top_level.txt\n'}
+[4.323048] (positioning) StdoutLine: {'line': b"reading manifest file '../../build/positioning/positioning.egg-info/SOURCES.txt'\n"}
+[4.327281] (positioning) StdoutLine: {'line': b"writing manifest file '../../build/positioning/positioning.egg-info/SOURCES.txt'\n"}
+[4.327999] (positioning) StdoutLine: {'line': b'running build\n'}
+[4.328525] (positioning) StdoutLine: {'line': b'running build_py\n'}
+[4.329072] (positioning) StdoutLine: {'line': b'copying positioning/imu_node.py -> /home/delta/ros2_ws/build/positioning/build/lib/positioning\n'}
+[4.330705] (positioning) StdoutLine: {'line': b'running install\n'}
+[4.331225] (-) TimerEvent: {}
+[4.332038] (positioning) StdoutLine: {'line': b'running install_lib\n'}
+[4.335959] (positioning) StdoutLine: {'line': b'copying /home/delta/ros2_ws/build/positioning/build/lib/positioning/imu_node.py -> /home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages/positioning\n'}
+[4.339065] (positioning) StdoutLine: {'line': b'byte-compiling /home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages/positioning/imu_node.py to imu_node.cpython-310.pyc\n'}
+[4.343607] (positioning) StdoutLine: {'line': b'running install_data\n'}
+[4.344260] (positioning) StdoutLine: {'line': b'running install_egg_info\n'}
+[4.354060] (positioning) StdoutLine: {'line': b"removing '/home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages/positioning-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[4.355836] (positioning) StdoutLine: {'line': b'Copying ../../build/positioning/positioning.egg-info to /home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages/positioning-0.0.0-py3.10.egg-info\n'}
+[4.361564] (positioning) StdoutLine: {'line': b'running install_scripts\n'}
+[4.431413] (-) TimerEvent: {}
+[4.433300] (positioning) StdoutLine: {'line': b'Installing gps_node script to /home/delta/ros2_ws/install/positioning/lib/positioning\n'}
+[4.434228] (positioning) StdoutLine: {'line': b'Installing gsm_position_node script to /home/delta/ros2_ws/install/positioning/lib/positioning\n'}
+[4.435023] (positioning) StdoutLine: {'line': b'Installing imu_node script to /home/delta/ros2_ws/install/positioning/lib/positioning\n'}
+[4.435767] (positioning) StdoutLine: {'line': b'Installing lidar_localization_node script to /home/delta/ros2_ws/install/positioning/lib/positioning\n'}
+[4.436463] (positioning) StdoutLine: {'line': b'Installing nav2_interface_node script to /home/delta/ros2_ws/install/positioning/lib/positioning\n'}
+[4.437135] (positioning) StdoutLine: {'line': b'Installing position_monitor_node script to /home/delta/ros2_ws/install/positioning/lib/positioning\n'}
+[4.438076] (positioning) StdoutLine: {'line': b'Installing sensor_fusion_node script to /home/delta/ros2_ws/install/positioning/lib/positioning\n'}
+[4.440083] (positioning) StdoutLine: {'line': b"writing list of installed files to '/home/delta/ros2_ws/build/positioning/install.log'\n"}
+[4.531725] (-) TimerEvent: {}
+[4.561106] (positioning) CommandEnded: {'returncode': 0}
+[4.611111] (positioning) JobEnded: {'identifier': 'positioning', 'rc': 0}
+[4.614246] (-) EventReactorShutdown: {}

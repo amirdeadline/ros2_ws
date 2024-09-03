@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String
+from std_msgs.msg import String, Float32
 from rclpy.parameter import Parameter
 import random
 
@@ -23,6 +23,20 @@ class MotorHealthMonitorNode(Node):
 
         # Create a publisher for health status
         self.health_publisher = self.create_publisher(String, '/motor_health', 10)
+
+        # Subscribe to temperature sensors and current sensors
+        self.create_subscription(Float32, '/ts11', self.temperature_callback, 10)
+        self.create_subscription(Float32, '/ts12', self.temperature_callback, 10)
+        self.create_subscription(Float32, '/ts21', self.temperature_callback, 10)
+        self.create_subscription(Float32, '/ts22', self.temperature_callback, 10)
+        self.create_subscription(Float32, '/current_m11', self.current_callback, 10)
+        self.create_subscription(Float32, '/current_m12', self.current_callback, 10)
+        self.create_subscription(Float32, '/current_m21', self.current_callback, 10)
+        self.create_subscription(Float32, '/current_m22', self.current_callback, 10)
+
+        # Dictionary to hold sensor readings
+        self.temperatures = {'ts11': 0.0, 'ts12': 0.0, 'ts21': 0.0, 'ts22': 0.0}
+        self.currents = {'current_m11': 0.0, 'current_m12': 0.0, 'current_m21': 0.0, 'current_m22': 0.0}
 
         # Create a timer to periodically check motor health
         self.timer = self.create_timer(self.check_interval, self.check_motor_health)
@@ -47,24 +61,49 @@ class MotorHealthMonitorNode(Node):
 
         return rclpy.parameter.ParameterEventCallbackReturnType.SUCCESS
 
+    def temperature_callback(self, msg, sensor_name):
+        # Update the temperature reading for the sensor
+        self.temperatures[sensor_name] = msg.data
+
+    def current_callback(self, msg, current_name):
+        # Update the current reading for the motor
+        self.currents[current_name] = msg.data
+
     def check_motor_health(self):
-        # Simulate sensor readings
-        motor_current = random.uniform(0, 15)
-        motor_temperature = random.uniform(20, 100)
+        # Check each motor's current against the threshold
+        for motor, current in self.currents.items():
+            if current > self.current_threshold:
+                self.get_logger().warn(f'High current detected on {motor}: {current}A')
+                self.publish_health_status(f'Warning: High current on {motor} - {current}A')
 
-        # Check if the readings exceed the thresholds
-        if motor_current > self.current_threshold:
-            self.get_logger().warn(f'High motor current detected: {motor_current}A')
-            self.publish_health_status(f'Warning: High motor current - {motor_current}A')
+        # Check each motor's temperature against the threshold
+        for sensor, temperature in self.temperatures.items():
+            if temperature > self.temperature_threshold:
+                self.get_logger().warn(f'High temperature detected on {sensor}: {temperature}°C')
+                self.publish_health_status(f'Warning: High temperature on {sensor} - {temperature}°C')
 
-        if motor_temperature > self.temperature_threshold:
-            self.get_logger().warn(f'High motor temperature detected: {motor_temperature}°C')
-            self.publish_health_status(f'Warning: High motor temperature - {motor_temperature}°C')
-
-        self.get_logger().info(f'Motor current: {motor_current}A, Temperature: {motor_temperature}°C')
+        # Log current and temperature data for each motor
+        self.get_logger().info(f'Motor currents: {self.currents}, Temperatures: {self.temperatures}')
 
     def publish_health_status(self, message):
         msg = String()
         msg.data = message
         self.health_publisher.publish(msg)
         self.get_logger().info(f'Published motor health status: {message}')
+
+
+def main(args=None):
+    rclpy.init(args=args)
+    motor_health_monitor_node = MotorHealthMonitorNode()
+
+    try:
+        rclpy.spin(motor_health_monitor_node)
+    except KeyboardInterrupt:
+        motor_health_monitor_node.get_logger().info("Shutting down node.")
+    finally:
+        motor_health_monitor_node.destroy_node()
+        rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()

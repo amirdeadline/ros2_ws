@@ -1,0 +1,41 @@
+running egg_info
+creating ../../build/positioning/positioning.egg-info
+writing ../../build/positioning/positioning.egg-info/PKG-INFO
+writing dependency_links to ../../build/positioning/positioning.egg-info/dependency_links.txt
+writing entry points to ../../build/positioning/positioning.egg-info/entry_points.txt
+writing requirements to ../../build/positioning/positioning.egg-info/requires.txt
+writing top-level names to ../../build/positioning/positioning.egg-info/top_level.txt
+writing manifest file '../../build/positioning/positioning.egg-info/SOURCES.txt'
+reading manifest file '../../build/positioning/positioning.egg-info/SOURCES.txt'
+writing manifest file '../../build/positioning/positioning.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/delta/ros2_ws/build/positioning/build
+creating /home/delta/ros2_ws/build/positioning/build/lib
+creating /home/delta/ros2_ws/build/positioning/build/lib/positioning
+copying positioning/__init__.py -> /home/delta/ros2_ws/build/positioning/build/lib/positioning
+copying positioning/gps_node.py -> /home/delta/ros2_ws/build/positioning/build/lib/positioning
+running install
+running install_lib
+creating /home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages/positioning
+copying /home/delta/ros2_ws/build/positioning/build/lib/positioning/__init__.py -> /home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages/positioning
+copying /home/delta/ros2_ws/build/positioning/build/lib/positioning/gps_node.py -> /home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages/positioning
+byte-compiling /home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages/positioning/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages/positioning/gps_node.py to gps_node.cpython-310.pyc
+running install_data
+creating /home/delta/ros2_ws/install/positioning/share/ament_index
+creating /home/delta/ros2_ws/install/positioning/share/ament_index/resource_index
+creating /home/delta/ros2_ws/install/positioning/share/ament_index/resource_index/packages
+copying resource/positioning -> /home/delta/ros2_ws/install/positioning/share/ament_index/resource_index/packages
+copying package.xml -> /home/delta/ros2_ws/install/positioning/share/positioning
+running install_egg_info
+Copying ../../build/positioning/positioning.egg-info to /home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages/positioning-0.0.0-py3.10.egg-info
+running install_scripts
+Installing gps_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+Installing gsm_position_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+Installing imu_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+Installing lidar_localization_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+Installing nav2_interface_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+Installing position_monitor_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+Installing sensor_fusion_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+writing list of installed files to '/home/delta/ros2_ws/build/positioning/install.log'

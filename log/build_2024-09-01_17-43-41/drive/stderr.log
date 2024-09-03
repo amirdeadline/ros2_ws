@@ -1,6 +1,0 @@
-Sorry: IndentationError: expected an indented block after 'if' statement on line 41 (drive_control_node.py, line 42)
-  File "/home/delta/ros2_ws/install/drive/lib/python3.10/site-packages/drive/motor_controller_node.py", line 59
-    self.console_publisher.publish(String(data=con
-                                         ^
-SyntaxError: '(' was never closed
-
