@@ -1,0 +1,31 @@
+[3.241s] Invoking command in '/home/delta/ros2_ws/build/drive': PYTHONPATH=/home/delta/ros2_ws/build/drive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/delta/ros2_ws/install/drive/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/delta/ros2_ws/build/drive/build --no-deps symlink_data
+[4.677s] running develop
+[4.678s] /usr/local/lib/python3.10/dist-packages/setuptools/command/easy_install.py:156: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[4.678s]   warnings.warn(
+[5.679s] running egg_info
+[5.679s] creating drive.egg-info
+[5.680s] writing drive.egg-info/PKG-INFO
+[5.682s] writing dependency_links to drive.egg-info/dependency_links.txt
+[5.682s] writing entry points to drive.egg-info/entry_points.txt
+[5.683s] writing requirements to drive.egg-info/requires.txt
+[5.683s] writing top-level names to drive.egg-info/top_level.txt
+[5.685s] writing manifest file 'drive.egg-info/SOURCES.txt'
+[5.692s] reading manifest file 'drive.egg-info/SOURCES.txt'
+[5.695s] writing manifest file 'drive.egg-info/SOURCES.txt'
+[5.701s] running build_ext
+[5.702s] Creating /home/delta/ros2_ws/install/drive/lib/python3.10/site-packages/drive.egg-link (link to .)
+[5.705s] Installing drive_control script to /home/delta/ros2_ws/install/drive/lib/drive
+[5.706s] Installing motor_controller script to /home/delta/ros2_ws/install/drive/lib/drive
+[5.707s] Installing motor_health_monitor script to /home/delta/ros2_ws/install/drive/lib/drive
+[5.708s] 
+[5.709s] Installed /home/delta/ros2_ws/build/drive
+[5.709s] running symlink_data
+[5.710s] creating /home/delta/ros2_ws/install/drive/share/ament_index
+[5.710s] creating /home/delta/ros2_ws/install/drive/share/ament_index/resource_index
+[5.711s] creating /home/delta/ros2_ws/install/drive/share/ament_index/resource_index/packages
+[5.711s] symbolically linking /home/delta/ros2_ws/build/drive/resource/drive -> /home/delta/ros2_ws/install/drive/share/ament_index/resource_index/packages
+[5.712s] symbolically linking /home/delta/ros2_ws/build/drive/package.xml -> /home/delta/ros2_ws/install/drive/share/drive
+[5.713s] symbolically linking /home/delta/ros2_ws/build/drive/launch/drive_launch.py -> /home/delta/ros2_ws/install/drive/share/drive
+[5.714s] creating /home/delta/ros2_ws/install/drive/share/drive/config
+[5.715s] symbolically linking /home/delta/ros2_ws/build/drive/config/drive_params.yaml -> /home/delta/ros2_ws/install/drive/share/drive/config
+[5.854s] Invoked command in '/home/delta/ros2_ws/build/drive' returned '0': PYTHONPATH=/home/delta/ros2_ws/build/drive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/delta/ros2_ws/install/drive/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/delta/ros2_ws/build/drive/build --no-deps symlink_data

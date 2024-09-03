@@ -1,0 +1,21 @@
+[3.134s] Invoking command in '/home/delta/ros2_ws/build/drive': PYTHONPATH=/home/delta/ros2_ws/build/drive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/delta/ros2_ws/install/drive/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/delta/ros2_ws/build/drive/build --no-deps symlink_data
+[4.488s] running develop
+[4.489s] /usr/local/lib/python3.10/dist-packages/setuptools/command/easy_install.py:156: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[4.490s]   warnings.warn(
+[5.436s] running egg_info
+[5.437s] writing drive.egg-info/PKG-INFO
+[5.437s] writing dependency_links to drive.egg-info/dependency_links.txt
+[5.438s] writing entry points to drive.egg-info/entry_points.txt
+[5.439s] writing requirements to drive.egg-info/requires.txt
+[5.440s] writing top-level names to drive.egg-info/top_level.txt
+[5.448s] reading manifest file 'drive.egg-info/SOURCES.txt'
+[5.451s] writing manifest file 'drive.egg-info/SOURCES.txt'
+[5.457s] running build_ext
+[5.458s] Creating /home/delta/ros2_ws/install/drive/lib/python3.10/site-packages/drive.egg-link (link to .)
+[5.462s] Installing drive_control script to /home/delta/ros2_ws/install/drive/lib/drive
+[5.463s] Installing motor_controller script to /home/delta/ros2_ws/install/drive/lib/drive
+[5.464s] Installing motor_health_monitor script to /home/delta/ros2_ws/install/drive/lib/drive
+[5.465s] 
+[5.466s] Installed /home/delta/ros2_ws/build/drive
+[5.466s] running symlink_data
+[5.597s] Invoked command in '/home/delta/ros2_ws/build/drive' returned '0': PYTHONPATH=/home/delta/ros2_ws/build/drive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/delta/ros2_ws/install/drive/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/delta/ros2_ws/build/drive/build --no-deps symlink_data
