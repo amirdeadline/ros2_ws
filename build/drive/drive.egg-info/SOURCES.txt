@@ -4,6 +4,7 @@ setup.py
 config/drive_params.yaml
 drive/__init__.py
 drive/drive_control_node.py
+drive/emergency_stop_node.py
 drive/motor_controller_node.py
 drive/motor_health_monitor_node.py
 drive.egg-info/PKG-INFO

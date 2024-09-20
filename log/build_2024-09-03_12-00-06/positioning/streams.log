@@ -1,0 +1,23 @@
+[4.769s] Invoking command in '/home/delta/ros2_ws/build/positioning': PYTHONPATH=/home/delta/ros2_ws/build/positioning/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/delta/ros2_ws/build/positioning/build --no-deps symlink_data
+[6.288s] running develop
+[6.289s] /usr/local/lib/python3.10/dist-packages/setuptools/command/easy_install.py:156: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[6.290s]   warnings.warn(
+[7.425s] running egg_info
+[7.429s] writing positioning.egg-info/PKG-INFO
+[7.430s] writing dependency_links to positioning.egg-info/dependency_links.txt
+[7.432s] writing entry points to positioning.egg-info/entry_points.txt
+[7.432s] writing requirements to positioning.egg-info/requires.txt
+[7.433s] writing top-level names to positioning.egg-info/top_level.txt
+[7.438s] reading manifest file 'positioning.egg-info/SOURCES.txt'
+[7.445s] writing manifest file 'positioning.egg-info/SOURCES.txt'
+[7.450s] running build_ext
+[7.453s] Creating /home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages/positioning.egg-link (link to .)
+[7.455s] Installing camera_odometry_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+[7.457s] Installing gps_sensor_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+[7.459s] Installing imu_sensor_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+[7.462s] Installing position_estimator_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+[7.464s] Installing sensor_fusion_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+[7.472s] 
+[7.474s] Installed /home/delta/ros2_ws/build/positioning
+[7.476s] running symlink_data
+[7.722s] Invoked command in '/home/delta/ros2_ws/build/positioning' returned '0': PYTHONPATH=/home/delta/ros2_ws/build/positioning/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/delta/ros2_ws/build/positioning/build --no-deps symlink_data

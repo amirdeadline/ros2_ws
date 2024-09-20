@@ -1,9 +1,7 @@
 [console_scripts]
-gps_node = positioning.gps_node:main
-gsm_position_node = positioning.gsm_position_node:main
-imu_node = positioning.imu_node:main
-lidar_localization_node = positioning.lidar_localization_node:main
-nav2_interface_node = positioning.nav2_interface_node:main
-position_monitor_node = positioning.position_monitor_node:main
+camera_odometry_node = positioning.camera_odometry_node:main
+gps_sensor_node = positioning.gps_sensor_node:main
+imu_sensor_node = positioning.imu_sensor_node:main
+position_estimator_node = positioning.position_estimator_node:main
 sensor_fusion_node = positioning.sensor_fusion_node:main
 

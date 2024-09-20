@@ -1,24 +1,22 @@
+<?xml version="1.0"?>
 <package format="3">
   <name>positioning</name>
-  <version>0.0.0</version>
-  <description>ROS2 package for robot positioning</description>
+  <version>0.0.1</version>
+  <description>Positioning package for ROS2 using IMU, GPS, GSM, and 3D depth camera data</description>
 
-  <maintainer email="your_email@example.com">Your Name</maintainer>
+  <maintainer email="delta@example.com">delta</maintainer>
   <license>Apache License 2.0</license>
 
-  <!-- Build tool dependencies -->
   <buildtool_depend>ament_cmake</buildtool_depend>
-  <buildtool_depend>ament_python</buildtool_depend>
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
 
-  <!-- Package dependencies -->
   <depend>rclpy</depend>
   <depend>sensor_msgs</depend>
   <depend>std_msgs</depend>
-  <depend>nav_msgs</depend>
   <depend>geometry_msgs</depend>
-  <depend>tf2_ros</depend>
+  <depend>nav_msgs</depend>
+  <depend>tf2_ros</depend>  <!-- Dependency for transforming data frames, if needed -->
 
-  <!-- Testing dependencies -->
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 

@@ -1,10 +1,10 @@
 Metadata-Version: 2.1
 Name: positioning
-Version: 0.0.0
-Summary: ROS2 package for robot positioning
+Version: 0.0.1
+Summary: Positioning package for ROS2 using IMU, GPS, GSM, and 3D depth camera data
 Home-page: UNKNOWN
-Maintainer: Your Name
-Maintainer-email: your_email@example.com
+Maintainer: delta
+Maintainer-email: delta@example.com
 License: Apache License 2.0
 Platform: UNKNOWN
 

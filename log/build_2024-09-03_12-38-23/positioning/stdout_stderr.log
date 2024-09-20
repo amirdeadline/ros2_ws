@@ -1,0 +1,21 @@
+running develop
+/usr/local/lib/python3.10/dist-packages/setuptools/command/easy_install.py:156: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running egg_info
+writing positioning.egg-info/PKG-INFO
+writing dependency_links to positioning.egg-info/dependency_links.txt
+writing entry points to positioning.egg-info/entry_points.txt
+writing requirements to positioning.egg-info/requires.txt
+writing top-level names to positioning.egg-info/top_level.txt
+reading manifest file 'positioning.egg-info/SOURCES.txt'
+writing manifest file 'positioning.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/delta/ros2_ws/install/positioning/lib/python3.10/site-packages/positioning.egg-link (link to .)
+Installing camera_odometry_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+Installing gps_sensor_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+Installing imu_sensor_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+Installing position_estimator_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+Installing sensor_fusion_node script to /home/delta/ros2_ws/install/positioning/lib/positioning
+
+Installed /home/delta/ros2_ws/build/positioning
+running symlink_data

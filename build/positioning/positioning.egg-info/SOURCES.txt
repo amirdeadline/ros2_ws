@@ -9,8 +9,10 @@ setup.py
 ../../build/positioning/positioning.egg-info/top_level.txt
 ../../build/positioning/positioning.egg-info/zip-safe
 positioning/__init__.py
-positioning/gps_node.py
-positioning/imu_node.py
+positioning/camera_odometry_node.py
+positioning/gps_sensor_node.py
+positioning/imu_sensor_node.py
+positioning/position_estimator_node.py
 positioning/sensor_fusion_node.py
 positioning.egg-info/PKG-INFO
 positioning.egg-info/SOURCES.txt

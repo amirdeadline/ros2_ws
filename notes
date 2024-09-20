@@ -36,6 +36,16 @@ arduino-cli upload -p /dev/serial1 --fqbn arduino:avr:mega test0/arduino/test/te
 
 arduino-cli upload -p /dev/ttyAMA0 --fqbn arduino:avr:mega /home/delta/ros2_ws/test0/arduino/test/test.ino
 
+#arduino Uno IMU
+arduino-cli compile --fqbn arduino:avr:uno /home/delta/ros2_ws/test0/arduino/imu/imu.ino
+arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno /home/delta/ros2_ws/test0/arduino/imu/imu.ino
+
+
+#arduino Uno ESC
+arduino-cli compile --fqbn arduino:avr:uno /home/delta/ros2_ws/test0/arduino/esc/esc.ino
+arduino-cli upload -p /dev/serial0 --fqbn arduino:avr:uno /home/delta/ros2_ws/test0/arduino/esc/esc.ino
+
+/dev/serial0
 
 
 ##minicom serial access 
