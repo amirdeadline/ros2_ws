@@ -1,0 +1,17 @@
+#ignore warnings in build colcon
+export PYTHONWARNINGS=ignore:::setuptools.command.install
+
+
+
+#add new python package 
+ros2 pkg create <<package_name>> --build-type ament_python
+source install/setup.bash
+
+
+
+#clean colcon and rebuild 
+cd ~/lawnbot
+rm -rf build install log
+source /opt/ros/jazzy/setup.bash  # Adjust if using a different ROS distribution
+colcon build
+
