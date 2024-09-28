@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Logs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            padding: 20px;
+        }
+        .log-container {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 500px;
+            overflow-y: scroll;
+        }
+        .log-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Function to update logs every few seconds
+        function updateLogs() {
+            $.get('/get_logs/', function(data) {
+                $('#log-container').empty();
+                data.logs.forEach(function(log) {
+                    $('#log-container').append('<div class="log-item">' + log + '</div>');
+                });
+            });
+        }
+
+        // Poll logs every 5 seconds
+        setInterval(updateLogs, 5000);
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>System Logs</h1>
+        <div id="log-container" class="log-container">
+            <!-- Logs will be appended here -->
+        </div>
+    </div>
+
+</body>
+</html>

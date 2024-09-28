@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Control Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+        }
+        .panel {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .large-panel {
+            grid-column: span 2;
+        }
+        .button {
+            background-color: #ccc;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin: 5px;
+            min-width: 50px;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #aaa;
+        }
+        .camera-feed, .data-feed {
+            width: 100%;
+            height: 150px;
+            background-color: #e0e0e0;
+            text-align: center;
+            line-height: 150px;
+            font-size: 16px;
+            color: #888;
+        }
+        .button-grid {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+        .drive-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 10px;
+            justify-items: center;
+        }
+        .drive-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Function to send a command via AJAX
+        function sendCommand(url, params) {
+            $.get(url, params).done(function() {
+                console.log("Command sent successfully: ", params);
+            }).fail(function() {
+                console.log("Error sending command: ", params);
+            });
+        }
+
+        let intervalId;  // To keep track of the interval for Left/Right buttons
+
+        // Set up button event listeners
+        $(document).ready(function() {
+            // Mower buttons
+            $('#mower-e').mousedown(function() { sendCommand('/mower_control/', { action: 'extend' }); });
+            $('#mower-e').mouseup(function() { sendCommand('/mower_control/', { action: 'stop' }); });
+
+            $('#mower-r').mousedown(function() { sendCommand('/mower_control/', { action: 'retract' }); });
+            $('#mower-r').mouseup(function() { sendCommand('/mower_control/', { action: 'stop' }); });
+
+            $('#mower-motor-on').click(function() { sendCommand('/mower_control/', { action: 'motor_on' }); });
+            $('#mower-motor-off').click(function() { sendCommand('/mower_control/', { action: 'motor_off' }); });
+
+            // Dethatcher buttons
+            $('#dethatcher-e').mousedown(function() { sendCommand('/dethatcher_control/', { action: 'extend' }); });
+            $('#dethatcher-e').mouseup(function() { sendCommand('/dethatcher_control/', { action: 'stop' }); });
+
+            $('#dethatcher-r').mousedown(function() { sendCommand('/dethatcher_control/', { action: 'retract' }); });
+            $('#dethatcher-r').mouseup(function() { sendCommand('/dethatcher_control/', { action: 'stop' }); });
+
+            $('#dethatcher-motor-on').click(function() { sendCommand('/dethatcher_control/', { action: 'motor_on' }); });
+            $('#dethatcher-motor-off').click(function() { sendCommand('/dethatcher_control/', { action: 'motor_off' }); });
+
+            // Weed Control buttons (extend and retract)
+            $('#weed-e').mousedown(function() { sendCommand('/weed_control/', { action: 'extend' }); });
+            $('#weed-e').mouseup(function() { sendCommand('/weed_control/', { action: 'stop' }); });
+
+            $('#weed-r').mousedown(function() { sendCommand('/weed_control/', { action: 'retract' }); });
+            $('#weed-r').mouseup(function() { sendCommand('/weed_control/', { action: 'stop' }); });
+
+            // Weed Control Left/Right with continuous steps
+            $('#weed-left').click(function() { sendCommand('/weed_control/', { action: 'left' }); });
+            $('#weed-right').click(function() { sendCommand('/weed_control/', { action: 'right' }); });
+
+
+            // Aerator buttons
+            $('#aerator-e').mousedown(function() { sendCommand('/aerator_control/', { action: 'extend' }); });
+            $('#aerator-e').mouseup(function() { sendCommand('/aerator_control/', { action: 'stop' }); });
+
+            $('#aerator-r').mousedown(function() { sendCommand('/aerator_control/', { action: 'retract' }); });
+            $('#aerator-r').mouseup(function() { sendCommand('/aerator_control/', { action: 'stop' }); });
+
+            // Main Battery buttons
+            $('#battery-lock').click(function() { sendCommand('/battery_control/', { action: 'lock' }); });
+            $('#battery-unlock').click(function() { sendCommand('/battery_control/', { action: 'unlock' }); });
+
+            // Drive buttons
+            $('#fwd-btn').mousedown(function() { sendCommand('/move/', { direction: 'forward' }); });
+            $('#fwd-btn').mouseup(function() { sendCommand('/move/', { direction: 'stop' }); });
+
+            $('#back-btn').mousedown(function() { sendCommand('/move/', { direction: 'backward' }); });
+            $('#back-btn').mouseup(function() { sendCommand('/move/', { direction: 'stop' }); });
+
+            $('#rotate-left-btn').mousedown(function() { sendCommand('/move/', { direction: 'left' }); });
+            $('#rotate-left-btn').mouseup(function() { sendCommand('/move/', { direction: 'stop' }); });
+
+            $('#rotate-right-btn').mousedown(function() { sendCommand('/move/', { direction: 'right' }); });
+            $('#rotate-right-btn').mouseup(function() { sendCommand('/move/', { direction: 'stop' }); });
+
+            $('#stop-btn').click(function() { sendCommand('/move/', { direction: 'stop' }); });
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Tabs for navigation -->
+    <div>
+        <button class="button">Control</button>
+        <button class="button">Status</button>
+        <button class="button">Topics</button>
+        <button class="button">Services</button>
+    </div>
+
+    <div class="container">
+        <!-- System Panel -->
+        <div class="panel large-panel">
+            <h3>System</h3>
+            <p>Status: Online or Offline</p>
+            <p>Longitude: xxxxxxx.xxx</p>
+            <p>Latitude: xxxxxxx.xxx</p>
+            <p>Speed: xx MPS</p>
+            <p>Heading: xxx</p>
+            <p>Time: 14:00:00</p>
+            <p>CPU: xx%</p>
+            <p>RAM: xx%</p>
+            <p>Job: ----</p>
+        </div>
+
+        <!-- LIDAR Data Panel -->
+        <div class="panel">
+            <h3>LIDAR Data</h3>
+            <div class="data-feed">LIDAR feed here</div>
+        </div>
+
+        <!-- Main Camera Feed Panel -->
+        <div class="panel">
+            <h3>Main Camera Video</h3>
+            <div class="camera-feed">Main Camera Feed Here</div>
+        </div>
+
+        <!-- Mower Control Panel -->
+        <div class="panel">
+            <h3>Mower</h3>
+            <p>Level: xxxxxx</p>
+            <p>Motors: On/Off</p>
+            <div class="button-grid">
+                <button class="button" id="mower-e">E</button>
+                <button class="button" id="mower-r">R</button>
+            </div>
+            <div class="button-grid">
+                <button class="button" id="mower-motor-on">Motor On</button>
+                <button class="button" id="mower-motor-off">Motor Off</button>
+            </div>
+        </div>
+
+        <!-- Dethatcher Control Panel -->
+        <div class="panel">
+            <h3>Dethatcher</h3>
+            <p>Level: xxxxxx</p>
+            <p>Motors: On/Off</p>
+            <div class="button-grid">
+                <button class="button" id="dethatcher-e">E</button>
+                <button class="button" id="dethatcher-r">R</button>
+            </div>
+            <div class="button-grid">
+                <button class="button" id="dethatcher-motor-on">Motor On</button>
+                <button class="button" id="dethatcher-motor-off">Motor Off</button>
+            </div>
+        </div>
+
+        <!-- Weed Control Panel -->
+        <div class="panel">
+            <h3>Weed Control</h3>
+            <p>Level: xxxxxx</p>
+            <p>Location: xxxxxxxx</p>
+            <div class="button-grid">
+                <button class="button" id="weed-e">E</button>
+                <button class="button" id="weed-r">R</button>
+            </div>
+            <div class="button-grid">
+                <button class="button" id="weed-left">Left</button>
+                <button class="button" id="weed-right">Right</button>
+            </div>
+        </div>
+
+        <!-- WC Camera Panel -->
+        <div class="panel">
+            <h3>WC Camera Video</h3>
+            <div class="camera-feed">WC Camera Feed Here</div>
+        </div>
+
+        <!-- Drive Panel -->
+        <div class="panel large-panel">
+            <h3>Drive</h3>
+            <div class="drive-layout">
+                <button class="button" id="rotate-left-btn">Rotate Left</button>
+                <div class="drive-column">
+                    <button class="button" id="fwd-btn">Fwd</button>
+                    <button class="button" id="back-btn">Back</button>
+                </div>
+                <button class="button" id="rotate-right-btn">Rotate Right</button>
+            </div>
+            <button class="button" id="stop-btn">Stop</button>
+        </div>
+
+        <!-- Main Battery Control Panel -->
+        <div class="panel">
+            <h3>Main Battery</h3>
+            <p>Level: xxxxxx</p>
+            <p>Lock: On/Off</p>
+            <div class="button-grid">
+                <button class="button" id="battery-lock">Lock</button>
+                <button class="button" id="battery-unlock">Unlock</button>
+            </div>
+        </div>
+
+        <!-- Aerator Control Panel -->
+        <div class="panel">
+            <h3>Aerator</h3>
+            <p>Level: xxxxxx</p>
+            <div class="button-grid">
+                <button class="button" id="aerator-e">E</button>
+                <button class="button" id="aerator-r">R</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

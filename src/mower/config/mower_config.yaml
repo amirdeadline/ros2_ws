@@ -1,0 +1,1 @@
+arduino_address: "/dev/ttyUSB0"  # Replace this with the correct address of Arduino Mega #1

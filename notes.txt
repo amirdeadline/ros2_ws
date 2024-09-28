@@ -13,5 +13,16 @@ source install/setup.bash
 cd ~/lawnbot
 rm -rf build install log
 source /opt/ros/jazzy/setup.bash  # Adjust if using a different ROS distribution
-colcon build
+colcon build --symlink-install
 
+
+
+
+
+
+#launch 
+ros2 launch drive drive_launch.py 
+ros2 launch aerator aerator_launch.py 
+ros2 launch mower mower_launch.py 
+ros2 launch weed_control weed_control_launch.py 
+ros2 launch dethatcher dethatcher_launch.py
