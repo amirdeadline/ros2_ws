@@ -25,6 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
             'system_node = system.system_node:main',  # This should be correct
+            'log_handler_node = system.log_handler_node:main',  # Updated to reference log_handler_node
         ],
     },
 )

@@ -1,0 +1,14 @@
+aerator_la_control:
+  ros__parameters:
+    serial_port: "/dev/ttyACM3"  # Example serial port for Arduino
+    baud_rate: 9600  # You can add other parameters as needed
+
+aerator_ultra_sensor:
+  ros__parameters:
+    sensor_param_1: "value1"
+    sensor_param_2: "value2"
+
+aerator_planner:
+  ros__parameters:
+    planner_param_1: "value1"
+    planner_param_2: "value2"

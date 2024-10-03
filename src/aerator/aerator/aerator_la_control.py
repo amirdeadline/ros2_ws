@@ -8,12 +8,21 @@ from std_msgs.msg import String
 class AeratorLAControlNode(Node):
     def __init__(self):
         super().__init__('aerator_la_control')
+
+        # Declare the 'serial_port' parameter with a default value
+        self.declare_parameter('serial_port', '/dev/ttyUSB0')
+
+        # Get the value of the 'serial_port' parameter
+        self.serial_port = self.get_parameter('serial_port').get_parameter_value().string_value
+        self.get_logger().info(f"Serial Port: {self.serial_port}")
+
         # Subscriber to the aerator linear actuator commands topic
         self.subscription = self.create_subscription(
             String,
             '/aerator_la_commands',
             self.listener_callback,
-            10)
+            10
+        )
         self.subscription  # prevent unused variable warning
         self.get_logger().info("Aerator Linear Actuator Control Node has been started.")
     
@@ -33,8 +42,8 @@ class AeratorLAControlNode(Node):
 
     def send_command_to_arduino(self, command):
         try:
-            # Use subprocess to send commands to Arduino via the console
-            result = subprocess.run(['echo', command, '>', '/dev/ttyUSB0'], shell=True)
+            # Use subprocess to send commands to Arduino via the serial port
+            result = subprocess.run(['echo', command, '>', self.serial_port], shell=True)
             if result.returncode == 0:
                 self.get_logger().info(f"Command sent to Arduino: {command}")
             else:
